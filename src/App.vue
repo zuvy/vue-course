@@ -2,21 +2,44 @@
   <div>
     <app-header/><br>
     <div class="container">
-      <Cars :cars="cars"/>
+      <Cars/>
+      <hr/>
+      <button @click="updateCar">Update Car Model</button>
+  <!-- still able to access the const cars object -->
+      <!-- {{ cars[0].model }} -->
     </div>
   </div>
 </template>
 
 <script setup>
   // using reactive since we are working with objects (ref has more overhead)
-  import { reactive } from 'vue';
+  import { reactive, provide } from 'vue';
   import Cars from './components/Cars/index.vue';
-  // creating the content to inject into the children (Cars --> list) see the reactive bind variable :cars="cars" in the container div
+
+ // using the const lets the object remain available h
   const cars = reactive([
     { model: 'Dino', brand: 'Ferrari'},
     { model: '911', brand: 'Posrche'},
     { model: 'Tipo', brand: 'Fiat'}
   ])
+  // can stil update reactive content dynamically.
+  // if we "provide" it, we can update from the child component
+  const updateCar = () => {
+    cars[1].model = 'Carerra';
+  }
+
+  provide('cars', {
+    cars,
+    updateCar
+  });
+ 
+ // can "provide" direct access to the cars object with the following syntax istead of using a const.
+ // but this makes it unavaiable on the App component.
+ // provide ('cars',[
+ //   { model: 'Dino', brand: 'Ferrari'},
+ //   { model: '911', brand: 'Posrche'},
+ //   { model: 'Tipo', brand: 'Fiat'}
+ //libx32 ])
 </script>
 
 <!-- style tags are global no matter what component you put it in unless you scope it --> 

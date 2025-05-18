@@ -3,15 +3,19 @@
   <div>
     <ul v-for="car in cars" :key="car.model">
       <li>
-        <span>{{ car.model }}</span>: {{ car.brand }}
+        <span>{{ car.brand}}</span>: {{ car.model  }}
       </li>
     </ul>
+    <hr/>
+    <!-- updateCar is a function provided from the App.vue component, so this click event will trigger the funcion there -->
+    <button @click="updateCar">Update Cars from Child</button>
   </div>
 </template>
 
 <script setup>
-  // props defined originally in App.vue imported into the Cars component and finally made available
-  // to display here in the list template.
-  // passing props from parent to child gets unwieldy when the parent child chain gets longer.
-  const props = defineProps(['cars']);
+  // this is all that's needed to provide the cars props from the App.vue component.
+  import { inject } from 'vue';
+  // provided cars object and the function to update the car fromm the child.
+  const { cars, updateCar } = inject('cars');
 </script>
+
