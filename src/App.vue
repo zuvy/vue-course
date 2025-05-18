@@ -5,45 +5,41 @@
       Container
       <Cars/>
       <hr/>
-      <button @click="updateCar">Update Car Model</button>
-  <!-- still able to access the const cars object -->
-      <!-- {{ cars[0].model }} -->
+      <CarBrands>
+      <!-- Vue's version of page fragments
+           Using opening and closing tags for a component makes a "Slot", content in the slot will be rendered on the child components
+           Called on the child component with the <slot></slot> tag
+
+           The only way to update this is to pass a prop to the child that triggers a function here on the parent component that will update the state of the brands const.
+
+           Best for static content you want to pass from the parent component to children.
+      -->
+        <ul>
+          <li v-for="(brand, index) in brands" :key="index">
+            {{ brand }}
+          </li>
+        </ul>
+      </CarBrands>
     </div>
   </div>
 </template>
 
 <script setup>
-  // using reactive since we are working with objects (ref has more overhead)
   import { reactive, provide } from 'vue';
   import Cars from './components/Cars/index.vue';
+  import CarBrands from './components/Cars/brands.vue';
 
- // using the const lets the object remain available h
+  const brands = reactive(['Mazda', 'Honda', 'Renault'])
+
   const cars = reactive([
     { model: 'Dino', brand: 'Ferrari'},
     { model: '911', brand: 'Posrche'},
     { model: 'Tipo', brand: 'Fiat'}
   ])
-  // can stil update reactive content dynamically.
-  // if we "provide" it, we can update from the child component
-  const updateCar = () => {
-    cars[1].model = 'Carerra';
-  }
 
-  provide('cars', {
-    cars,
-    updateCar
-  });
- 
- // can "provide" direct access to the cars object with the following syntax istead of using a const.
- // but this makes it unavaiable on the App component.
- // provide ('cars',[
- //   { model: 'Dino', brand: 'Ferrari'},
- //   { model: '911', brand: 'Posrche'},
- //   { model: 'Tipo', brand: 'Fiat'}
- //libx32 ])
+  provide('cars', cars);
 </script>
 
-<!-- style tags are global no matter what component you put it in unless you scope it --> 
 <style>
   body {
     padding: 0;
