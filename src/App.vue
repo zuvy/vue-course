@@ -1,29 +1,31 @@
 <template>
   <div>
-    <app-header/><br>
+    <app-header /><br>
     <div class="container">
-      Container
+      <Life v-if="showIt" />
+      <hr />
+      <button @click="showIt = !showIt">Toggle</button>
     </div>
   </div>
 </template>
 
 <script setup>
-
+import { ref } from 'vue';
+import Life from './components/Life/index.vue';
+const showIt = ref(true);
 </script>
 
-<!-- style tags are global no matter what component you put it in unless you scope it --> 
+<!-- style tags are global no matter what component you put it in unless you scope it -->
 <style>
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Robot', sans-serif;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Robot', sans-serif;
+}
 
-  .container {
-    min-height: 84vh;
-    box-sizing: border-box;
-    padding: 20px;
-  }
+.container {
+  min-height: 84vh;
+  box-sizing: border-box;
+  padding: 20px;
+}
 </style>
-
-

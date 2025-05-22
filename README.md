@@ -27,3 +27,19 @@ npm run dev
 ```sh
 npm run build
 ```
+
+Notes:
+Component LifeCycle
+the Setup life cycle
+onBeforeMount()
+onMounted()
+
+Update life cycle
+OnBeforeUpdate()
+onUpdated()
+
+Adding and Removing components
+Destroy
+onUnmounted()
+onBeforeUnmount()
+
