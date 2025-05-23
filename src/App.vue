@@ -2,13 +2,13 @@
   <div>
     <app-header/><br>
     <div class="container">
-      Container
+      <Directives/>
     </div>
   </div>
 </template>
 
 <script setup>
-
+  import Directives from '@/components/Directives/index.vue';
 </script>
 
 <!-- style tags are global no matter what component you put it in unless you scope it --> 
