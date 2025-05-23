@@ -6,11 +6,17 @@
       <button @click="activeComp = Steve">Steve</button>
 
       <!-- <Mike v-if="activeComp === Mike" />
-          <Steve v-if="activeComp === Steve" /> -->
-      <keep-alive>
+          <Steve v-if="activeComp === Steve" /> 
+      <component :is="activeComp"></component>
+      the include in the tag below can be exclude and it wil take a comma delimited list "mike , steve"
+      so you can apply keep alive to a specific group of components.
+      It is also obviously using the file name prefix not the component name.
+      -->
+      <keep-alive include="mike,steve">
         <component :is="activeComp"></component>
       </keep-alive>
     </div>
+    <div id="dialog_here"></div>
   </div>
 </template>
 

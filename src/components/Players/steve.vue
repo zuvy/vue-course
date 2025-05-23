@@ -1,17 +1,17 @@
 <template>
   <h3>Steve is on</h3>
+  <Teleport to="#dialog_here">
+    <dialog open>
+      <h3>I am a modal</h3>
+    </dialog>
+    <Modal/>
+  </Teleport>
 </template>
 
 <script setup>
-import { onUnmounted, onActivated, onDeactivated } from 'vue';
-
+import Modal from '@/components/Utils/modal.vue';
+import { onUnmounted } from 'vue';
 onUnmounted(() => {
-  console.log("Mike unmounted.");
-});
-onActivated(() => {
-  console.log("Steve activated");
-});
-onDeactivated(() => {
-  console.log("Steve deactivated");
+  console.log("Steve Unmounted");
 });
 </script>
