@@ -51,7 +51,7 @@
               <h5>Want more spam ? </h5>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Newsletter" id="newsletter"
-                  v-model="formData.newsletter"
+                  v-model="formData.extras"
                   >
                   <label class="form-check-label" for="newsletter">
                       Newsletter
@@ -59,7 +59,7 @@
               </div>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Promotions" id="promotions"
-                  v-model="formData.promotions"
+                  v-model="formData.extras"
                   >
                   <label class="form-check-label" for="newsletter">
                       Promotions
@@ -71,6 +71,7 @@
               <h5>What are you ? </h5>
               <div class="form-check">
                   <input class="form-check-input" type="radio" id="human" value="human" name="origin"
+                    v-model="formData.gender"
                   >
                   <label class="form-check-label" for="human">
                       Human
@@ -78,6 +79,7 @@
               </div>
               <div class="form-check">
                   <input class="form-check-input" type="radio" id="alien" value="alien" name="origin"
+                    v-model="formData.gender"
                   >
                   <label class="form-check-label" for="alien">
                       Alien
@@ -107,8 +109,8 @@
     email: '',
     subject: '',
     message: '',
-    newsletter: false,
-    promotions: false,
+    extras: [],
+    gender: 'alien'
   });
 
   const submitForm = () => {
