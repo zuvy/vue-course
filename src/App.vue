@@ -2,13 +2,13 @@
   <div>
     <app-header/><br>
     <div class="container">
-      Container
+      <Contact/>
     </div>
   </div>
 </template>
 
 <script setup>
-
+  import Contact from './components/contact/index.vue';
 </script>
 
 <!-- style tags are global no matter what component you put it in unless you scope it --> 
