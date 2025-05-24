@@ -51,6 +51,7 @@
               <h5>Want more spam ? </h5>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Newsletter" id="newsletter"
+                  v-model="formData.newsletter"
                   >
                   <label class="form-check-label" for="newsletter">
                       Newsletter
@@ -58,6 +59,7 @@
               </div>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="Promotions" id="promotions"
+                  v-model="formData.promotions"
                   >
                   <label class="form-check-label" for="newsletter">
                       Promotions
@@ -104,7 +106,9 @@
     name: 'Frank',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    newsletter: false,
+    promotions: false,
   });
 
   const submitForm = () => {
