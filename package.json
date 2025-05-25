@@ -1,5 +1,5 @@
 {
-  "name": "comps",
+  "name": "package.json",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,11 +9,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "vee-validate": "^4.15.0",
+    "vue": "^3.5.13",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
-  }
+  },
+  "description": "vue course",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuvy/vue-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuvy/vue-course/issues"
+  },
+  "homepage": "https://github.com/zuvy/vue-course#readme"
 }

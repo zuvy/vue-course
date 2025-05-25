@@ -2,13 +2,15 @@
   <div>
     <app-header/><br>
     <div class="container">
-      <Contact/>
+      <!-- <Contact/> -->
+      <Validate/>
     </div>
   </div>
 </template>
 
 <script setup>
-  import Contact from './components/contact/index.vue';
+  // import Contact from './components/contact/index.vue';
+  import Validate from './components/validate/index.vue';
 </script>
 
 <!-- style tags are global no matter what component you put it in unless you scope it --> 
