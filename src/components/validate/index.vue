@@ -1,13 +1,13 @@
 <template>
   <Form @submit="handleSubmit" :validation-schema="formSchema" class="form">
     <div class="mb-3">
-      <label for="name">Name</label>
+      <label for="email">const</label>
       <Field 
         v-focus 
-        name="name" 
-        placeholder="Enter your name"
+        name="email" 
+        placeholder="Enter your email"
         class="form-control"/>
-      <ErrorMessage name="name" as="div" v-slot="{message}">
+      <ErrorMessage name="email" as="div" v-slot="{message}">
         <div class="alert alert-danger" role="alert">
           {{ message }}
         </div>
@@ -26,9 +26,14 @@
 
   const formSchema = yup.object({
     name: yup.string()
-      .required('The name is required.')
-      .max(5, 'Sorry name is longer than 5 characters')
-  })
+      .required('The email is required.')
+      .max(5, 'Sorry name is longer than 5 characters'),
+
+    email: yup.string()
+      .required('The email is required.')
+      .email('The email is not valid.')
+  });
+
 
 //  const isRequired = (value) => {
 //    if (!value) {
