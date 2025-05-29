@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Frank",
+      "lastname": "Zappa"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "lastname": "Lennon"
+    },
+    {
+      "id": 3,
+      "name": "Jim",
+      "lastname": "Morrison"
+    },
+    {
+      "id": 4,
+      "name": "Janis",
+      "lastname": "Joplin"
+    },
+    {
+      "id": 5,
+      "name": "Jimi",
+      "lastname": "Hendrix"
+    },
+    {
+      "id": 6,
+      "name": "Paul",
+      "lastname": "Rogers"
+    },
+    {
+      "name": "John",
+      "lastname": "LongBow",
+      "id": 7
+    }
+  ]
+}
