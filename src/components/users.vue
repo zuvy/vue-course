@@ -38,23 +38,20 @@
 
     const toast = useToast();
 
-    const loadUsers = () => {
-      axios.get(`http://localhost:3004/users`)
-        .then(response => {
-          data.users = response.data
+    const loadUsers = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3004/users`);
+          data.users = response.data;
           data.loading = false;
-      })
-        .catch(error => {
+      } catch (error) {
           toast.error(
-            error.response?.data?.message || error.message || 'Failed to load users. Please try again later.',
+           error.response?.data?.message || error.message || 'Failed to load users. Please try again later.'),
           { duration: 5000 }
-       );
-      })
+      };
     }
     onMounted(() => {
       loadUsers();
     });
-   
 
 </script>
 
