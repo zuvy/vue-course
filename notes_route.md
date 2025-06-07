@@ -19,7 +19,7 @@ when using vite with vue-router, import.meta.env.BASE_URL must be used as the ar
 Linking
  In the component router-link takes he place of a for links. The to attlibute replaces href and is used to specify the path.
 
-
+For setting up links to external sites we import into the component where we want to use (for now anyway) useRouter and useRoute from 'vue-router' 
 
 
 
